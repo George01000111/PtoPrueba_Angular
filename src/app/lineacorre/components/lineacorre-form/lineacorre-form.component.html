@@ -1,0 +1,86 @@
+<form [formGroup]="form"  (ngSubmit)="save($event)">
+    <mat-card>
+
+    <mat-card-header>
+      <mat-card-title>Linea Correlativo</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+    <mat-form-field appearance="fill">
+        <mat-label>Id: {{ idField.value }}</mat-label>
+        <input matInput type="number" formControlName="id">
+         <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+    <div  class="messages" *ngIf="idField.touched  && idField.invalid">
+        <mat-error *ngIf="idField.hasError('required')">Este campo es requerido</mat-error>
+    </div>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Cod Empresa: {{ codempresaField.value }}</mat-label>
+        <input matInput type="text" formControlName="codempresa">
+    </mat-form-field>
+     <div  class="messages" *ngIf="codempresaField.touched && codempresaField.invalid">
+        <mat-error *ngIf="codempresaField.hasError('required')">Este campo es requerido</mat-error>
+    </div>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Nro Factura: {{ nrofacField.value }}</mat-label>
+        <input matInput type="number" formControlName="nrofac">
+    </mat-form-field>
+
+     <div  class="messages" *ngIf="nrofacField.touched && nrofacField.invalid">
+        <mat-error *ngIf="nrofacField.hasError('required')">Este campo es requerido</mat-error>
+    </div>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Nro Boleta: {{ nrobolField.value }}</mat-label>
+        <input matInput type="number" formControlName="nrobol">
+    </mat-form-field>
+     <div  class="messages" *ngIf="nrobolField.touched && nrobolField.invalid">
+        <mat-error *ngIf="nrobolField.hasError('required')">Este campo es requerido</mat-error>
+    </div>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Nro Fact Refact: {{ nrofacrefField.value }}</mat-label>
+        <input matInput type="number" formControlName="nrofacRef">
+    </mat-form-field>
+     <div  class="messages" *ngIf="nrofacrefField.touched && nrofacrefField.invalid">
+        <mat-error *ngIf="nrofacrefField.hasError('required')">Este campo es requerido</mat-error>
+    </div>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Nro Boleta Refact: {{ nrobolrefField.value }}</mat-label>
+        <input matInput type="number" formControlName="nrobolRef">
+    </mat-form-field>
+     <div  class="messages" *ngIf="nrobolrefField.touched && nrobolrefField.invalid">
+        <mat-error *ngIf="nrobolrefField.hasError('required')">Este campo es requerido</mat-error>
+    </div>
+
+    <section class="example-section">
+        <mat-checkbox  formControlName="enviaElect">Enviar Electronico</mat-checkbox>
+    </section>
+
+    <mat-form-field>
+        <mat-label>Linea</mat-label>
+        <mat-select formControlName="lineaCodlinea">
+           <mat-option [value]="linea.codlinea" *ngFor="let linea of lineas" >
+               {{ linea.deslinea }}
+            </mat-option>
+
+        </mat-select>
+    </mat-form-field>
+
+   </mat-card-content>
+
+    <mat-card-actions>
+        <button mat-raised-button  color="warn" type="submit">
+            <span *ngIf="!lineacorreId">Crear</span>
+            <span *ngIf="lineacorreId">Editar</span>
+        </button>
+    </mat-card-actions>
+
+   
+    </mat-card>
+
+</form>
+

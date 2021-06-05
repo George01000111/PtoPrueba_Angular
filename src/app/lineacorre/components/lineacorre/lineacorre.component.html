@@ -1,0 +1,34 @@
+<head>
+  <title>Formulario</title> 
+</head>
+
+<a mat-raised-button routerLink="create">Crear nueva categoría</a>
+<table mat-table [dataSource]="lineacorretivos" class="mat-elevation-z8 products-table">
+
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let lineacorre"> {{lineacorre.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="codempresa">
+        <th mat-header-cell *matHeaderCellDef> Cod Empresa </th>
+        <td mat-cell *matCellDef="let lineacorre"> {{lineacorre.codempresa}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nrofac">
+        <th mat-header-cell *matHeaderCellDef> Nro Fact </th>
+        <td mat-cell *matCellDef="let lineacorre"> {{lineacorre.nrofac}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let lineacorre"> 
+     
+            <a mat-raised-button [routerLink]="['edit',lineacorre.id]" >Editar</a>
+            <button mat-raised-button color="warn">Eliminar</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
