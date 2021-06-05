@@ -1,0 +1,24 @@
+ejecutar pto
+ng server
+
+compilar
+ng build --prod
+
+instalando material
+ng add @angular/material
+
+
+crear componente
+ng g c nombre
+ng g c components/lineacorre
+
+
+con buildForm hace mas compacto el formulario
+
+creando un servicio
+ng g s core/services/lineacorre
+
+------------para crear formularios rapidos---------------------
+ng add @angular/cdk
+ng generate @angular/material:address-form <component-name>
+--------------------------------
