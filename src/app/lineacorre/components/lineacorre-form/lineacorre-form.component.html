@@ -3,6 +3,10 @@
 
     <mat-card-header>
       <mat-card-title>Linea Correlativo</mat-card-title>
+
+
+      <a mat-raised-button [routerLink]="['listar']" >......</a>
+
     </mat-card-header>
 
     <mat-card-content>
@@ -74,9 +78,17 @@
 
     <mat-card-actions>
         <button mat-raised-button  color="warn" type="submit">
-            <span *ngIf="!lineacorreId">Crear</span>
-            <span *ngIf="lineacorreId">Editar</span>
+            <span>Crear</span>
+    <!--         <span *ngIf="!lineacorreId">Crear</span>
+            <span *ngIf="lineacorreId">Editar</span> -->
         </button>
+
+        <button mat-raised-button  color="warn" type="submit">
+     
+            <span>Editar</span>
+        </button>
+
+
     </mat-card-actions>
 
    

@@ -28,6 +28,15 @@ export class LineacorreService {
     return this.http.get<Lineacorre>(`${this.url}/GetLineaCorrexid/${id}`)
   }
 
+  busqLineacorre(id:string){
+    if (id!=''){
+      return this.http.get<Lineacorre[]>(`${this.url}/BusqLineaCorre/${id}`)
+    }else{
+      return this.http.get<Lineacorre[]>(this.url)
+    }
+    
+  }
+
   createLineacorre(data: Partial<Lineacorre>){
     return this.http.post<Lineacorre>(this.url,data);
   }
@@ -36,6 +45,8 @@ export class LineacorreService {
     return this.http.put<Lineacorre>(`${this.url}/${id}`, data);
   }
 
-
+  deleteLineacorre(id:number){
+    return this.http.delete(`${this.url}/${id}`)
+  }
 
 }

@@ -6,3 +6,5 @@ export interface Linea {
     trans:       boolean;
     correlativo: number;
 }
+
+

@@ -9,14 +9,23 @@ import { LineacorreFormComponent } from './components/lineacorre-form/lineacorre
 const routes: Routes = [
   {
     path: '',
+    component: LineacorreFormComponent
+  },
+
+  {
+    path: 'listar',
     component: LineacorreComponent
   },
+  {
+    path: 'create/listar',
+    component: LineacorreComponent
+  }, 
   {
     path: 'create',
     component: LineacorreFormComponent
   },
   {
-    path: 'edit/:id',
+    path: 'listar/edit/:id',
     component: LineacorreFormComponent
   }
 ];

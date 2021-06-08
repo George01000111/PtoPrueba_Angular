@@ -1,7 +1,7 @@
 git init
 git add .
 git commit -m "subiendo por primera vez"
-git remote set-url origin https://github.com/George01000111/PtoPrueba_Angular.git
+git remote set-url https://github.com/George01000111/PtoPrueba_Angular.git
 git push -u origin master
 
 
